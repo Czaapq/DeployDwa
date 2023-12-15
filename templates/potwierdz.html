@@ -1,0 +1,14 @@
+{% extends 'glowny.html' %}
+
+{% block tytul %} Usun Bibika {% endblock %}
+
+
+{% block strona %}
+
+<h1>Czy napewno chcesz usunac bibika "{{ bibik.imie }}"?</h1>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-outline-danger">Usun bibka</button>
+</form>
+<a href="{% url 'wszystkie_bibiki' %}">Cofnij</a>
+{% endblock %}
